@@ -1,7 +1,6 @@
 .header{
-    width: 100%;
-    font-size: 12px;
-    display: flex;
+   /* width: 100%;*/
+    
     padding: 1rem 2rem;
     border-bottom: 1px solid gray;;
 }
@@ -14,8 +13,8 @@
     border-radius: 0.4rem;
 }
 
-.header input{
-    font-size: 12px;
+.header input[type="search"]{
+    /*font-size: 12px;*/    
     background-color: #f5f6f7;
     border-radius: 0.4rem;
     margin-left: 10px;
@@ -34,4 +33,5 @@
 .header a{
     font-size: 1.25rem;
     color:#3b49df;
+    padding-right: 1rem;
 }
