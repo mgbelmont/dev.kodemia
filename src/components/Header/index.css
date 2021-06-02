@@ -2,7 +2,8 @@
    /* width: 100%;*/
     
     padding: 1rem 2rem;
-    border-bottom: 1px solid gray;;
+    border-bottom: 1px solid gray;
+    background: var(--header-background)
 }
 
 .header h1{
@@ -34,4 +35,15 @@
     font-size: 1.25rem;
     color:#3b49df;
     padding-right: 1rem;
+}
+
+.header .btn.btn-link{
+    color: var(--bs-primary);
+    text-decoration: none
+}
+
+.header .btn.btn-primary{
+    background: var(--bs-primary);
+
+    color: var(--color)
 }

@@ -1,12 +1,15 @@
 import React from 'react';
 
+import AppButton from '../AppButton'
 
 import HeaderLogo from './HeaderLogo';
 import HeaderInput from './HeaderInput';
 import HeaderLogin from './HeaderLogin';
 import HeaderButtonCreate from './HeaderButtonCreate';
+import AppThemeToggle from '../AppThemeToggle'
 
 import Styles from './index.css'
+
 
 class Header extends React.Component{
     render(){
@@ -17,9 +20,12 @@ class Header extends React.Component{
                     <HeaderInput />
                 </div>
                 <div className='d-flex justify-content-center align-items-center'>
-                    <HeaderLogin />
-                    <HeaderButtonCreate />
-                </div>
+                    
+
+                    <AppButton className='btn-link d-flex align-items-center' text="log in" type="anchor" />
+                    <AppButton className='btn-primary' text="Create Account" type="anchor" />
+                    <AppThemeToggle />
+                    </div>
                 
                 
             </nav>

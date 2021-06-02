@@ -1,0 +1,24 @@
+.appThemeToggle{
+    position: relative;
+
+    margin-left: 1rem;
+
+    padding: 0.5rem 0.75rem;
+
+    background: rgb(65, 63, 63);
+    
+    border-radius: 0.75rem;
+
+    width: 4rem;
+    height: 2.5rem;
+}
+
+.appThemeToggle.light::after{
+    content: "🌞";
+    position: absolute;
+}
+
+.appThemeToggle.dark::after{
+    content: "🌙";
+    position: absolute;
+}
