@@ -3,7 +3,9 @@ import React from 'react'
 import Header from './components/Header'
 import SideLeft from './components/SideLeft';
 import Posts from './components/Posts';
+import Counter from './components/Counter';
 import AppLoading from './components/AppLoading';
+
 <from></from>
 class App extends React.Component {
   render(){
@@ -16,6 +18,7 @@ class App extends React.Component {
         
           <main className='col-8'>
             <Posts />
+            <Counter />
           </main>
 
           </div>
