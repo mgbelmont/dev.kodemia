@@ -1,5 +1,56 @@
 import React, { useState } from "react";
 
+const petsData = {
+  dogs: [
+    {
+      name: "Sr. Peabody",
+      age: "5",
+    },
+    {
+      name: "Solovino",
+      age: "10",
+    },
+  ],
+  cats: [
+    {
+      name: "Misifu",
+      age: "1",
+    },
+    {
+      name: "Nefermishi",
+      age: "5",
+    },
+  ],
+};
+
+export default function Exercises() {
+  const buildLIPets = ({ name, age }, index) => (
+    <li key={index} className="list-group-item">
+      Name: {name}, age: {age}
+    </li>
+  );
+
+  const petsArray = Object.entries(petsData).map(([type, pets], index) => (
+    <React.Fragment key={index}>
+      <div className="card-header">{type}</div>
+      <ul className="list-group list-group-flush">{pets.map(buildLIPets)}</ul>
+    </React.Fragment>
+  ));
+
+  return (
+    <div className="container">
+      <div className="row justify-content-center">
+        <div className="col">
+          <div className="card" style={{ width: "18rem" }}>
+            {petsArray}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/*
 export default function Exercises() {
   const [stateCreditCard, setStateCreditCard] = useState("");
   const [stateName, setName] = useState("");
@@ -87,7 +138,7 @@ export default function Exercises() {
       </div>
     </div>
   );
-}
+}*/
 /*
 export default function Exercises() {
   const [USD, setUSD] = useState(null);
