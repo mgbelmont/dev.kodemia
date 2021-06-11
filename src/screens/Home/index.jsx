@@ -16,7 +16,6 @@ export default function Home() {
       .then((json) => setData(json));
   }, []);
 
-  console.log(data.results);
   return (
     <React.Fragment>
       <Header />

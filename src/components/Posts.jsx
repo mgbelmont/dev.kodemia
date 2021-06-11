@@ -1,20 +1,24 @@
 import React from "react";
 
+import { useHistory } from "react-router";
+
 import AppCard from "./AppCard";
 
 export default function Posts(props) {
-  console.log("los props", props.data);
+  const history = useHistory();
 
   const buildLi = ([key, { title, description }]) => {
-    console.log(key);
     return (
       <li key={key}>
         <AppCard>
           <h5 className="card-title">{title}</h5>
           <p className="card-text">{description}</p>
-          <a href="#" className="btn btn-primary">
-            Go somewhere
-          </a>
+          <button
+            onClick={() => history.push(`/posts/${key}`)}
+            className="btn btn-primary"
+          >
+            Detail
+          </button>
         </AppCard>
       </li>
     );
