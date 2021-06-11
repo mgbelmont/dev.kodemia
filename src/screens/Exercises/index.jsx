@@ -79,20 +79,19 @@ export default function Exercises() {
         setNext(json.info.next);
       });
 
-    //https://react-11g-default-rtdb.firebaseio.com/
-    fetch("https://react-11g-default-rtdb.firebaseio.com/posts.json", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/JSON",
-      },
-      body: JSON.stringify({
-        author: "Mariana García",
-        description: "Este es un tigre",
-        image:
-          "https://images.unsplash.com/photo-1590767187868-b8e9ece0974b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1907&q=80",
-        title: "Tigre",
-      }),
-    })
+    //-Mbsa5_QIqftEH06VG8g
+    fetch(
+      "https://react-11g-default-rtdb.firebaseio.com/posts/-Mbsa5_QIqftEH06VG8g.json",
+      {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/JSON",
+        },
+        body: JSON.stringify({
+          description: "Modificando mi descripción",
+        }),
+      }
+    )
       .then((response) => response.json())
       .then((json) => {
         console.log(json);
