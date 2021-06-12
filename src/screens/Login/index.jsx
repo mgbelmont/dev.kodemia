@@ -2,19 +2,31 @@ import React, { useState } from "react";
 
 import { useHistory } from "react-router";
 
+import { postLogin } from "../../services";
+import CustomInput from "../../components/CustomInput";
+
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const history = useHistory();
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(email, password);
-
+    try {
+      const newLogin = {
+        email,
+        password,
+      };
+      await postLogin(newLogin);
+      history.push("/");
+    } catch (error) {
+      console.log(error);
+    }
+    /*
     setTimeout(() => {
       history.push("/");
-    }, 1000);
+    }, 1000);*/
   };
 
   return (
@@ -25,10 +37,13 @@ export default function Login() {
             <h2 className="text-white">Log In</h2>
             <form className="mt-5" onSubmit={handleSubmit}>
               <div className="form-group col-12">
-                <label className="text-white" htmlFor="exampleInputEmail1">
-                  Email address
-                </label>
-                <input
+                <CustomInput
+                  id="exampleInputEmail1"
+                  placeholder="exampleInputEmail1"
+                  value={email}
+                  callback={setEmail}
+                />
+                {/*<input
                   type="email"
                   className="form-control"
                   id="exampleInputEmail1"
@@ -36,20 +51,23 @@ export default function Login() {
                   placeholder="Enter email"
                   value={email}
                   onChange={(event) => setEmail(event.target.value)}
-                />
+                />*/}
               </div>
               <div className="form-group col-12">
-                <label className="text-white" htmlFor="exampleInputPassword1">
-                  Password
-                </label>
-                <input
+                <CustomInput
+                  id="exampleInputPassword1"
+                  placeholder="exampleInputPassword1"
+                  value={password}
+                  callback={setPassword}
+                />
+                {/*<input
                   type="password"
                   className="form-control"
                   id="exampleInputPassword1"
                   placeholder="Password"
                   value={password}
                   onChange={({ target: { value } }) => setPassword(value)}
-                />
+                />*/}
               </div>
               <button type="submit" className="btn btn-primary mt-2">
                 Submit
