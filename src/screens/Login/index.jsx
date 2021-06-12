@@ -38,36 +38,20 @@ export default function Login() {
             <form className="mt-5" onSubmit={handleSubmit}>
               <div className="form-group col-12">
                 <CustomInput
-                  id="exampleInputEmail1"
-                  placeholder="exampleInputEmail1"
+                  id="Email"
+                  placeholder="Email"
                   value={email}
                   callback={setEmail}
                 />
-                {/*<input
-                  type="email"
-                  className="form-control"
-                  id="exampleInputEmail1"
-                  aria-describedby="emailHelp"
-                  placeholder="Enter email"
-                  value={email}
-                  onChange={(event) => setEmail(event.target.value)}
-                />*/}
               </div>
               <div className="form-group col-12">
                 <CustomInput
-                  id="exampleInputPassword1"
-                  placeholder="exampleInputPassword1"
+                  id="Password"
+                  type="password"
+                  placeholder="Contraseña"
                   value={password}
                   callback={setPassword}
                 />
-                {/*<input
-                  type="password"
-                  className="form-control"
-                  id="exampleInputPassword1"
-                  placeholder="Password"
-                  value={password}
-                  onChange={({ target: { value } }) => setPassword(value)}
-                />*/}
               </div>
               <button type="submit" className="btn btn-primary mt-2">
                 Submit
